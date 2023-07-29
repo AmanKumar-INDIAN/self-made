@@ -44,7 +44,7 @@
    --on-surface-dark: hsl(280, 17%, 90%);
    --on-surface-variant-dark: hsl(270, 11%, 79%);
    --surface-container-low-dark: hsl(264, 8%, 12%);
-   --surface-container-dark: hsl(257, 10%, 14%);
+   --surface-container-dark: hsl(255, 10%, 15%);
    --surface-bright-dark: hsl(270, 5%, 23%);
    --primary-dark: hsl(258, 100%, 87%);
    --on-primary-dark: hsl(259, 58%, 28%);
@@ -459,6 +459,14 @@ letter-spacing: 0.4px;
 }
 
 
+
+.tab-content:not(.active){display: none;}
+
+
+.section-title{
+  margin-block-end: 16px;
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -473,6 +481,24 @@ letter-spacing: 0.4px;
   place-items: center;
 }
 
+.btn{
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding-inline: 24px;
+  border-radius: var(--shape-corner-full);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: var(--weight-medium);
+  overflow: hidden;
+transition: 300ms ease;
+}
+
+.btn:hover{
+  background-image: linear-gradient(to top, #000e3b, #00264b, #003b55, #1f505c, #446364);
+  color: white;
+  box-shadow: 2px 2px 2px black;
+}
 /**
  * TAB
  */
@@ -600,8 +626,24 @@ transition:300ms ease-in-out;
  */
 
 
+.input-field ,
+.textarea{
+  color: var(--on-surface);
+   padding: 12px 10px;
+   box-shadow: inset 0 0 0 1px var(--outline);
+   outline: none;
+   border-radius: var(--shape-corner-extra-small);
+   transition: box-shadow var(--motion-duration-short-1) var(--motion-easing-linear);
+}
 
+.textarea{
+  height: 120px;
+  padding: 16px;
+}
 
+:where(.input-field, .textarea)::placeholder{color:var(--on-surface-variant) ;}
+
+:where(.input-field, .textarea):focus{box-shadow: inset 0 0 0 2px var(--primary);}
 
 /*-----------------------------------*\
   #TOP BAR
@@ -633,6 +675,7 @@ transition:300ms ease-in-out;
   overflow: hidden;
  background-color:var(--background);
  padding: 5px;
+ border: 1px solid bisque;
 }
 
 
@@ -730,18 +773,121 @@ border-radius: var(--shape-corner-large);
 \*-----------------------------------*/
 
 
+.resume-tab .list{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+gap: 24px;
+margin-block-end: 28px;
+}
+
+.resume-card{
+  display: grid;
+  gap: 4px;
+}
+
+.resume-card .card-subtitle{
+  color: var(--primary);
+}
 
 
+.resume-card .card-text{
+  color: var(--on-surface-variant);
+}
+
+.resume-botton-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 12px;
+}
+
+.resume-bottom-item{
+  background-color: var(--surface-container);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+ border-radius: var(--shape-corner-small);
+}
+
+.resume-bottom-item .icon{
+  height: 28px;
+}
 
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
 
+.contact-tab{padding-block-end: 0;}
+.contact-tab .container{padding-block-end:24px ;}
+.contect-info , 
+.contect-info-list{
+  display: grid;
+  gap: 12px;
+
+}
+.contect-info {margin-block-end: 24px;}
+.contect-info-list {
+  padding-block-end: 12px;
+  border-block-end: 1px solid var(--outline-variant);
+}
+.contect-info-item{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+}
+ .address{
+  width: 100%;
+  display: grid;
+ grid-template-columns: repeat(auto,minmax(210px,1fr));
+}
+
+.contect-info .icon-box
+{
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items:center ;
+  color: var(--on-surface-variant);
+}
 
 
+.info-contact{
+  display: grid;
+  gap: 4px;
+
+}
+
+.info-title{
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+}
+
+.info-text{color: var(--on-surface-variant);}
+
+.social-list{
+  display: flex;
+  gap: 12px;
+}
+
+.social-item{padding: 12px ;}
 
 
-/*-----------------------------------*\
+.input-wrapper{
+  margin-block-start: 16px;
+  display: grid;
+  gap: 10px;
+}
+.contact-form{
+  background-color: var(--surface-container);
+  padding: 16px;
+  margin-block-end: 16px;
+  border-radius: var(--shape-corner-medium);
+
+}
+/*
+---------------------------------*\
   #FOOTER
 \*-----------------------------------*/
 
