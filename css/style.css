@@ -892,9 +892,98 @@ margin-block-end: 28px;
 \*-----------------------------------*/
 
 
-
-
+.footer .container{
+  text-align: center;
+  padding: 18px;
+  border-block-start: 1px solid var(--outline-variant);
+}
 
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+
+/**
+responsive for larger then 750px
+
+***/
+
+@media (min-width:768px){
+  /**
+  reduse style*
+  **/
+
+  .artical{
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: flex-start;
+
+  }
+
+  .about-card,
+  .primary-tabs{
+    position: static;
+    top:64px ;
+  }
+.primary-tabs{
+  z-index: 2;
+
+}
+
+
+
+/***
+ hero
+*/
+
+
+.hero .container{
+  grid-template-columns: 0.2fr 1fr;
+}
+
+
+}
+
+
+
+
+/**
+responsive for larger then 1200px
+
+***/
+
+@media (min-width:1200px){
+/*
+reduse style
+*/
+ 
+.container,
+.artical{
+  max-width: 1128px;
+  margin-inline: auto;
+
+}
+
+/*
+about card*/
+
+.about-card{
+  margin-inline: 8px;
+
+}
+/**
+contact
+**/
+
+
+
+.contact-tab .container {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 24px;
+}
+
+}
