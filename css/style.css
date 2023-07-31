@@ -893,6 +893,7 @@ margin-block-end: 28px;
 
 
 .footer .container{
+  margin-top: 20px;
   text-align: center;
   padding: 18px;
   border-block-start: 1px solid var(--outline-variant);
